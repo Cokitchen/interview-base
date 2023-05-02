@@ -1,0 +1,161 @@
+.input {
+  border: 1px solid #e0dadb;
+  padding: 1.25rem;
+  border-radius: 8px;
+  color: #1a1a1a;
+  background-color: #fff;
+  font-size: 16px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &__box {
+    width: 100%;
+  }
+
+  &__has-value {
+    border-color: #1a1a1a;
+  }
+
+  &--small {
+    padding: 14.5px 1rem;
+  }
+
+  &--prefix {
+    padding-left: 2.75rem;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 4px;
+    margin-left: -4px;
+    margin-top: 4px;
+  }
+
+  &__bg {
+    border-radius: 12px;
+    margin-left: -4px;
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    bottom: 0;
+    z-index: 0;
+    transition: 100ms linear;
+  }
+
+  &:active,
+  &:focus {
+    border-color: #1a1a1a;
+    outline: none;
+    box-shadow: none;
+
+    & ~ .input__bg {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1.25rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+
+    &--eye {
+      cursor: pointer;
+    }
+
+    &--prefix {
+      right: unset;
+      left: 1.25rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__currency {
+    color: #1a1a1a;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 1.325rem;
+      height: 30px;
+      border-left: 1px solid #dedede;
+    }
+  }
+
+  &__valid {
+    border-color: #46ae31;
+    padding-right: 3rem;
+
+    & ~ .input__bg {
+      background-color: #eaf8e7;
+    }
+  }
+
+  &__has-error {
+    border-color: #e60a2b;
+    padding-right: 3rem;
+
+    & ~ .input__bg {
+      background-color: #fee7ea;
+    }
+  }
+
+  &__error {
+    line-height: 25px;
+    margin: 0;
+    margin-top: 8px;
+    padding-left: 20px;
+    color: #e60a2b;
+    font-weight: 500;
+  }
+
+  &__label {
+    font-weight: 500;
+  }
+}
+
+/* placeholder styling */
+.input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #a6a6a6;
+}
+.input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #a6a6a6;
+}
+.input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #a6a6a6;
+}
+.input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #a6a6a6;
+}
+
+// reset search default styling
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 1.25rem 2rem;
+  border: none;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 100ms linear;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: pre;
+}
+
+.btn__loader svg {
+  width: 15px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.btn-loading {
+  pointer-events: none;
+}
+
+/* small btns */
+.btn--small {
+  padding: 0.75rem 1.5rem;
+}
+
+/* block btns */
+.btn-block {
+  width: 100%;
+  max-width: 490px;
+}
+
+.btn-block.btn-primary {
+  background-color: #e60a2b;
+  border: 1px solid #e60a2b;
+  color: white;
+}
+
+.btn-block.btn-primary:hover {
+  background-color: #fa8596;
+  border-color: #fa8596;
+  color: white;
+}
+
+.btn-block.btn-gray {
+  background-color: #a3a3a3;
+  border: 1px solid #a3a3a3;
+  color: white;
+}
+
+.btn-block.btn-gray:hover {
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+  color: white;
+}
+
+.btn-block:disabled {
+  background-color: #dedede;
+  border-color: #dedede;
+  color: white;
+}
+
+/* outline btns */
+.btn-outline {
+  width: 100%;
+  max-width: 490px;
+}
+
+.btn-outline.btn-primary {
+  background-color: transparent;
+  border: 1px solid #fcb6c0;
+  color: #e60a2b;
+}
+
+.btn-outline.btn-primary:hover {
+  background-color: rgba(230, 10, 43, 0.04);
+}
+
+.btn-outline.btn-gray {
+  background-color: transparent;
+  border: 1px solid #a3a3a3;
+  color: #a3a3a3;
+}
+
+.btn-outline.btn-gray:hover {
+  background-color: #bdbdbd;
+}
+
+.btn-outline:disabled {
+  background-color: #dedede;
+  border-color: #dedede;
+  color: white;
+}
+
+/* link btns */
+.btn-link {
+  padding: 0;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.btn-link:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: unset;
+}
+
+.btn-link.btn-primary {
+  color: #e60a2b;
+}
+
+.btn-link.btn-primary:hover {
+  color: #fa8596;
+}
+
+.btn-link.btn-gray {
+  color: #a3a3a3;
+}
+
+.btn-link.btn-gray:hover {
+  color: #bdbdbd;
+}
+
+.btn-link:disabled {
+  color: #a3a3a3;
+}
+
+.btn-loading.btn-primary {
+  background-color: #fa8596;
+  border-color: #fa8596;
+}

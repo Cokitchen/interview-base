@@ -1,0 +1,25 @@
+---
+description: A Input component.
+---
+
+import { Input } from './input';
+
+A component that does something special and renders text in a div.
+
+### Component usage
+
+```js
+<Input
+  label="Label text"
+  placeholder="Placeholder text"
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  // any other html input prop is allowed
+/>
+```
+
+### Render hello world!
+
+```js live
+<Input label="Label text" placeholder="Placeholder text" value="here" />
+```

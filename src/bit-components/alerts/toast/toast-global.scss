@@ -1,0 +1,11 @@
+.toastify {
+  &__body,
+  &__wrapper {
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.Toastify__toast-container {
+  width: unset;
+}
