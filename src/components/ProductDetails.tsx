@@ -21,7 +21,7 @@ function ProductDetails() {
       .then((response) => response.json())
       .then((data) => {
         setProduct(data);
-        setTitle(data.name);
+        setTitle(data.title);
         setDescription(data.description);
         setPrice(data.price);
       })
@@ -65,24 +65,24 @@ function ProductDetails() {
   }
 
   return (
-    <div className='flex flex-col lg:flex-row p-8 lg:p-16 space-x-24'>
+    <div className='flex flex-col lg:flex-row p-8 lg:p-16 lg:space-x-24'>
       <div className='flex-1'>
         <h1 className='font-bold text-2xl'>{product.title}</h1>
         <p className='mb-5 mt-px'>Add and Edit item details</p>
         <img src={product.thumbnail} alt={product.title} className='w-full' />
       </div>
       <form onSubmit={handleSubmit} className='space-y-8 w-full flex-1'>
-        <label className='flex flex-col px-8 py-3 border rounded-md border-gray-4  focus:bg-mainPurple'>
+        <label className='flex flex-col px-4 py-3 border rounded-md border-gray-4  focus:bg-mainPurple'>
           Title:
           <input type='text' value={title} onChange={handleTitleChange} />
         </label>
         <br />
-        <label className='flex flex-col px-8 py-3 border rounded-md border-gray-4 h-64'>
+        <label className='flex flex-col px-4 py-3 border rounded-md border-gray-4 h-64'>
           Description the item
           <textarea value={description} onChange={handleDescriptionChange} />
         </label>
         <br />
-        <label className='flex flex-col px-8 py-3 border rounded-md border-gray-4 '>
+        <label className='flex flex-col px-4 py-3 border rounded-md border-gray-4 '>
           Price:
           <div>
             $ <input type='number' step='0.01' value={price} onChange={handlePriceChange} />

@@ -41,19 +41,21 @@ function ProductList() {
                 />
               </div>
 
-              <div className='flex justify-between my-6 space-x-6'>
-                <div className='w-4/6'>
+              <div className='flex justify-between my-6 space-x-2'>
+                <div className='w-4/6 flex flex-col justify-between space-y-3 h-full'>
                   {' '}
                   <h2 className='text-xl font-bold'>{product.title}</h2>
-                  <p>{product.rating}</p>
-                  <p>{product.description}</p>
+                  <p className='text-gray-5 text-sm'>{product.description}</p>
+                  <p className='bg-gray-1 w-fit px-2 rounded-sm'>
+                    {product.rating} <span className='text-yellow-5'>&#9733;</span>
+                  </p>
                 </div>
                 <div className='w-2/6 flex flex-col justify-between text-end'>
                   <p className='text-xl font-bold'>
                     ${product.price}
                     <span className='text-sm'>.00</span>
                   </p>
-                  <button onClick={() => handleViewDetails(product.id)}>View Details</button>
+                  <button className="text-mainPurple underline font-bold" onClick={() => handleViewDetails(product.id)}>View Details</button>
                 </div>
               </div>
             </div>
