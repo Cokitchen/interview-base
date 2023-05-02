@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['src/pages/**/*.{js,ts,jsx,tsx}', 'src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
     extend: {},
     // screen breakpoints config
     screens: {
@@ -70,7 +70,9 @@ module.exports = {
       'gray-5': '#858585',
       // gray-6 is base font color
       'gray-6': '#1A1A1A',
-      'gray-7': '#0F0F0F'
+      'gray-7': '#0F0F0F',
+      //purple color
+      'mainPurple' :'hsla(264, 44%, 35%, 1)'
     }
   },
   plugins: []

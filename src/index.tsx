@@ -5,6 +5,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import ALL_ROUTES from './router';
 import { ROUTE_KEYS } from './utils/constants';
+import ProductList from './components/ProductList';
+import ProductDetail from './components/ProductDetails';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -15,6 +17,8 @@ root.render(
           <Route key={index} {...route} />
         ))}
         <Route path='*' element={<Navigate to={ROUTE_KEYS.LOGIN} />} />
+        <Route path='/' element={<ProductList />} />
+        <Route path='/products/:id' element={<ProductDetail />} />
       </Routes>
     </BrowserRouter>
   </React.Fragment>
