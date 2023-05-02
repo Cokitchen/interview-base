@@ -1,6 +1,4 @@
 import React, { FormEvent, useState } from 'react';
-import { Input } from '../../bit-components/form/input';
-import { Button } from '../../bit-components/form/button';
 import { ROUTE_KEYS } from '../../utils/constants';
 import { useNavigate } from 'react-router';
 import authService from '../../services/auth.service';
@@ -15,34 +13,19 @@ const Login = () => {
     email: '',
     password: ''
   });
-  const [formError, setFormError] = useState<Partial<FormObjType>>({
-    email: '',
-    password: ''
-  });
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const formIsValid = (): boolean => {
-    setFormError({
-      email: '',
-      password: ''
-    });
     const email = formData.email.trim();
     const password = formData.password.trim();
     if (email !== '' && password !== '') return true;
-    if (email === '') setFormError({ email: 'Email is required' });
-    if (password === '') {
-      setFormError((p) => ({ ...p, password: 'Password is required' }));
-    }
     return false;
   };
   const login = async (e: FormEvent) => {
     e.preventDefault();
     if (!formIsValid()) return;
-    setLoading(true);
     const res = await authService.login(formData);
     if (res) navigate(ROUTE_KEYS.DASHBOARD);
-    setLoading(false);
   };
 
   const handleChange = (e: any) => {
@@ -64,36 +47,28 @@ const Login = () => {
         </p>
         <form onSubmit={login}>
           <div className='mb-[2rem]'>
-            <Input
+            <input
               name='email'
-              label='Email'
               type='email'
               placeholder='Enter email'
               value={formData.email}
-              error={formError.email}
               onChange={handleChange}
+              className='border border-gray-3 w-full py-1 px-2 rounded'
             />
           </div>
           <div className='mb-[4rem]'>
-            <Input
+            <input
               name='password'
               type='password'
-              label='Password'
               placeholder='Enter Password'
               value={formData.password}
-              error={formError.password}
               onChange={handleChange}
-              className='mt-3 mb-4'
+              className='border border-gray-3 w-full py-1 px-2 rounded'
             />
           </div>
-          <Button
-            color='primary'
-            className='mx-auto'
-            variant='block'
-            onClick={login}
-            loading={loading}>
+          <button color='primary' className='mx-auto bg-red-3 rounded py-1 px-4' onClick={login}>
             Login
-          </Button>
+          </button>
         </form>
       </section>
     </div>

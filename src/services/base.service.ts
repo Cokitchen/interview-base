@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { STORAGE_KEYS } from '../utils/constants';
 
-const BASE_API_URL = process.env.REACT_APP_API_URL;
-
 interface RequestOption {
   method?: string;
   data?: any;
@@ -18,8 +16,7 @@ const getToken = () => {
 const makeRequest = (urlPath: string, options: RequestOption, useToken: boolean) => {
   const headers = options.headers || {};
   if (useToken) headers['Authorization'] = 'Bearer ' + getToken();
-  const fullUrl = BASE_API_URL + urlPath;
-  return axios({ ...options, url: fullUrl, headers: headers });
+  return axios({ ...options, url: urlPath, headers: headers });
 };
 
 export const apiService = {
